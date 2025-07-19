@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do list using javascript</title>
-    <link rel="stylesheet" href="main.css">
+    <title>To-Do List | Neubrutalism</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <main class="app-container">
         <div class="todo-app">
-            <h2>To-DO List <img src="to-do-logo.jpg" alt="todo-logo" ></h2>
-        <div class="row">
-            <input type="text" id="input-box" placeholder="Add your daily To do list">
-            <button onclick="addtask()">ADD</button>
+            <h1>To-Do List</h1>
+            <form class="input-form">
+                <input type="text" id="input-box" placeholder="Add a new task...">
+                <button type="submit" title="Add task">ADD</button>
+            </form>
+            <ul id="list-container"></ul>
         </div>
-        <ul id="list-container">
-            <!-- <li class="checked">Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li> -->
-        </ul>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div id="modal-content" class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-message"></p>
+            <div id="modal-actions" class="modal-actions"></div>
         </div>
     </div>
-    <script src="do.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
