@@ -1,0 +1,190 @@
+:root {
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --border-color: #000000;
+    --text-color: #000000;
+    --primary-color: #f7b731;
+    --accent-color: #3498db;
+    --danger-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 500px;
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 8px 8px 0 var(--border-color);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.input-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#input-box {
+    flex-grow: 1;
+    border: 3px solid var(--border-color);
+    background: var(--card-bg);
+    padding: 12px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#input-box:focus {
+    box-shadow: 4px 4px 0 var(--primary-color);
+}
+
+.input-form button {
+    border: 3px solid var(--border-color);
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 25px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.input-form button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+#list-container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    padding: 15px 15px 15px 50px;
+    cursor: pointer;
+    position: relative;
+    border: 3px solid var(--border-color);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-break: break-word;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 3px solid var(--border-color);
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+ul li.checked::before {
+    background: var(--border-color);
+}
+
+.delete-btn {
+    font-size: 1.5rem;
+    color: var(--border-color);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border: 3px solid var(--border-color);
+    box-shadow: 8px 8px 0 var(--border-color);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#modal-title {
+    margin-bottom: 10px;
+}
+
+#modal-message {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-actions button {
+    border: 3px solid var(--border-color);
+    background: var(--card-bg);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.modal-actions button.btn-danger {
+    background: var(--danger-color);
+}
+
+.modal-actions button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
